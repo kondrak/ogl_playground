@@ -3,11 +3,9 @@
 #include <map>
 #include "InputHandlers.hpp"
 
-
 /*
  * main application
  */
-
 
 class Application
 {

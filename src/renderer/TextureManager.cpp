@@ -29,7 +29,7 @@ Texture *TextureManager::LoadTexture( const char *textureName )
         if( newTex->Load() == 0 )
         {
             delete newTex;
-            return NULL;
+            return nullptr;
         }
 
         m_textures[textureName] = newTex;

@@ -12,7 +12,7 @@
 class RenderContext
 {
 public:
-    RenderContext() : window( NULL ),
+    RenderContext() : window( nullptr ),
                       fov( 75.f * PIdiv180 ),
                       nearPlane( 0.1f ),
                       farPlane( 1000.f ),

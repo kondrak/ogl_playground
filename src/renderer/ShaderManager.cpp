@@ -68,7 +68,7 @@ std::string ShaderManager::ReadShaderFromFile( const char *filename )
     if( !file.is_open() )
     {
         LOG_MESSAGE_ASSERT( false, "Cannot open input file: " << filename );
-        return NULL;
+        return "";
     }
 
     std::string shaderSrc;

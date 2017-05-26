@@ -9,8 +9,8 @@
 
 
 extern RenderContext g_renderContext;
-extern DebugOverlay  *g_debugOverlay;
-CameraDirector g_cameraDirector;
+extern DebugOverlay *g_debugOverlay;
+CameraDirector       g_cameraDirector;
 
 // test render data
 GLuint g_vertexBufferTriangle;
@@ -27,9 +27,9 @@ void Application::OnStart( int argc, char **argv )
     glViewport( 0, 0, g_renderContext.width, g_renderContext.height );
 
     g_cameraDirector.AddCamera( Math::Vector3f( 0.0f, 0.0f, 1.0f ),
-        Math::Vector3f( 0.f, 1.f, 0.f ),
-        Math::Vector3f( 1.f, 0.f, 0.f ),
-        Math::Vector3f( 0.f, 0.f, -1.f ) );
+                                Math::Vector3f( 0.f, 1.f, 0.f ),
+                                Math::Vector3f( 1.f, 0.f, 0.f ),
+                                Math::Vector3f( 0.f, 0.f, -1.f ) );
 
     g_cameraDirector.GetActiveCamera()->SetMode( Camera::CAM_FPS );
 

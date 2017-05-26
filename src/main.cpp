@@ -8,7 +8,7 @@
 // keep the render context and application object global
 RenderContext g_renderContext;
 Application   g_application;
-DebugOverlay  *g_debugOverlay;
+DebugOverlay *g_debugOverlay;
 
 int main(int argc, char **argv)
 {

@@ -10,10 +10,6 @@
 class CameraDirector 
 {
 public:
-    CameraDirector::CameraDirector() : m_activeCamera(NULL)
-    {
-    }
-
     ~CameraDirector();
 
     size_t AddCamera(float x, float y, float z);
@@ -28,6 +24,6 @@ public:
     void OnMouseMove(int x, int y);
 
 private:
-    Camera *m_activeCamera;
+    Camera *m_activeCamera = nullptr;
     std::vector<Camera *> m_cameras;
 };

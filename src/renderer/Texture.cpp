@@ -8,7 +8,7 @@ Texture::Texture( const char *filename ) : m_texId( 0 )
 
 Texture::~Texture()
 {
-    if( m_textureData != NULL )
+    if( m_textureData )
         stbi_image_free( m_textureData );
 
     if( glIsTexture( m_texId ) )
@@ -20,7 +20,7 @@ Texture::~Texture()
 GLuint Texture::Load()
 {
     // texture was already bound or could not be loaded - return texId/0
-    if( m_textureData == NULL )
+    if( !m_textureData )
         return m_texId;
 
     glGenTextures( 1, &m_texId );
@@ -35,7 +35,7 @@ GLuint Texture::Load()
 
     stbi_image_free( m_textureData );
 
-    m_textureData = NULL;
+    m_textureData = nullptr;
 
     return m_texId;
 }

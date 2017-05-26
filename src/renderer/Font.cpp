@@ -56,7 +56,7 @@ Font::~Font()
 
 void Font::renderAt( const Math::Vector3f &pos, int w, int h, int uo, int vo, const Math::Vector4f &color )
 {
-    LOG_MESSAGE_ASSERT( m_texture != NULL, "Trying to render with no texture?" );
+    LOG_MESSAGE_ASSERT( m_texture, "Trying to render with no texture?" );
 
     Math::Matrix4f texMatrix, mvMatrix;
 

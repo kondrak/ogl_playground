@@ -41,6 +41,6 @@ void RenderContext::Destroy()
     {
         SDL_GL_DeleteContext( context );
         SDL_DestroyWindow( window );
-        window = NULL;
+        window = nullptr;
     }
 }
