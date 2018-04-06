@@ -7,7 +7,7 @@
 class FPSCounter
 {
 public:
-    FPSCounter() : m_numFrames( 0 ), m_numFramesToDraw( 1 ), m_time(0.f)
+    FPSCounter() : m_numFrames( 0 ), m_numFramesToDraw( 1 ), m_time( 0.f )
     {
         m_font = new Font( "textures/font.png" );
         m_font->SetScale(Math::Vector2f(2.f, 2.f));
