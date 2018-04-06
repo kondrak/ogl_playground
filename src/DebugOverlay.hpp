@@ -7,9 +7,10 @@
 class FPSCounter
 {
 public:
-    FPSCounter() : m_numFrames( 0 ), m_numFramesToDraw( 1 ), m_lastTime( 1000 )
+    FPSCounter() : m_numFrames( 0 ), m_numFramesToDraw( 1 ), m_time(0.f)
     {
         m_font = new Font( "textures/font.png" );
+        m_font->SetScale(Math::Vector2f(2.f, 2.f));
     }
 
     ~FPSCounter()
@@ -17,8 +18,9 @@ public:
         delete m_font;
     }
 
-    void OnFrameStart()
+    void OnFrameStart(float dt)
     {
+        m_time += dt;
         m_numFrames++;
     }
 
@@ -28,13 +30,13 @@ public:
         sstream << m_numFramesToDraw << " FPS";
         sstream2 << 1000.f / m_numFramesToDraw << " ms";
         m_font->drawText( sstream.str().c_str(), -1.0f, 1.0f );
-        m_font->drawText( sstream2.str().c_str(), -1.0f, 0.975f );
+        m_font->drawText( sstream2.str().c_str(), -1.0f, 0.95f );
 
-        if( SDL_GetTicks() - m_lastTime >= 1000 )
+        if( m_time > .25f )
         {
-            m_numFramesToDraw = m_numFrames;
+            m_numFramesToDraw = int(m_numFrames / m_time);
             m_numFrames = 0;
-            m_lastTime = SDL_GetTicks();
+            m_time = 0.f;
         }
     }
 
@@ -42,7 +44,7 @@ private:
     Font *m_font;
     int m_numFrames;
     int m_numFramesToDraw;
-    int m_lastTime;
+    float m_time;
 };
 
 
