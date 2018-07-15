@@ -60,7 +60,6 @@ void Application::OnStart( int argc, char **argv )
 
     // create triangle VAO & VBO
     glGenVertexArrays( 1, &g_vertexArrayTriangle );
-    glBindVertexArray( g_vertexArrayTriangle );
 
     glGenBuffers( 1, &g_vertexBufferTriangle );
     glBindBuffer( GL_ARRAY_BUFFER, g_vertexBufferTriangle );
@@ -68,7 +67,6 @@ void Application::OnStart( int argc, char **argv )
 
     // create quad VAO & VBO
     glGenVertexArrays( 1, &g_vertexArrayQuad );
-    glBindVertexArray( g_vertexArrayQuad );
 
     glGenBuffers( 1, &g_vertexBufferQuad );
     glBindBuffer( GL_ARRAY_BUFFER, g_vertexBufferQuad );
